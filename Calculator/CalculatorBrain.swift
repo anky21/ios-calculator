@@ -12,16 +12,14 @@ struct CalculatorBrain {
     
     private var accumulator: Double?
     
-    mutating func performOperation(_ symbol: String){
-        switch symbol {
-        case "π":
-            accumulator = Double.pi
-        case "√":
-            if let operand = accumulator{
-                accumulator = sqrt(operand)
-            }
-        default:
-            break
+    private var operations: Dictionary<String, Double> = [
+        "π": Double.pi,
+        "e": M_E
+    ]
+    
+    mutating func performOperation(_ symbol: String) {
+        if let constant = operations[symbol]{
+            accumulator = constant
         }
     }
     
