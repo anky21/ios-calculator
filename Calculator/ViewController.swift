@@ -23,7 +23,6 @@ class ViewController: UIViewController {
             display.text = digit
             userIsInTheMiddleOfTyping = true
         }
-        
     }
     
     var displayValue: Double {
